@@ -1,8 +1,8 @@
 <div class="container root">
   <div class="row mb-1">
-    <app-location-search-field></app-location-search-field>
+    <app-location-search-field (onGetWeather)="getWeather($event)"></app-location-search-field>
   </div>
   <div class="row">
-    <app-weather-display></app-weather-display>
+    <app-weather-display [weatherData]="weathers"></app-weather-display>
   </div>
 </div>
