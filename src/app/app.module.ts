@@ -7,6 +7,8 @@ import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
 import { BarChartComponent } from './charts/bar-chart/bar-chart.component';
 import { LocationSearchFieldComponent } from './location-search-field/location-search-field.component';
 import { WeatherDisplayComponent } from './weather-display/weather-display.component';
+import {HttpClientModule} from '@angular/common/http';
+import { MetaWeatherService } from './services/meta-weather-service';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,10 @@ import { WeatherDisplayComponent } from './weather-display/weather-display.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [MetaWeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
