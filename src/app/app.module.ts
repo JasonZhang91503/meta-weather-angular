@@ -3,10 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
+import { BarChartComponent } from './charts/bar-chart/bar-chart.component';
+import { LocationSearchFieldComponent } from './location-search-field/location-search-field.component';
+import { WeatherDisplayComponent } from './weather-display/weather-display.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PieChartComponent,
+    BarChartComponent,
+    LocationSearchFieldComponent,
+    WeatherDisplayComponent
   ],
   imports: [
     BrowserModule,
