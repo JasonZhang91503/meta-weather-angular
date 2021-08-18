@@ -1,1 +1,7 @@
-<p>location-search-field works!</p>
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Location</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Location" aria-label="Location"
+        aria-describedby="basic-addon1" (keyup.enter)="onEnter($event)">
+</div>

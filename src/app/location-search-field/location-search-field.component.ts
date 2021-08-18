@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { MetaWeatherService } from './../services/meta-weather-service';
+import { HttpClient } from '@angular/common/http';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-location-search-field',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LocationSearchFieldComponent implements OnInit {
 
-  constructor() { }
+  @Output() onGetWeather = new EventEmitter<any>();
+
+  constructor(private metaWeatherService: MetaWeatherService) { }
 
   ngOnInit(): void {
   }
 
+
+  onEnter(event){
+    let location = event.target.value;
+
+    this.metaWeatherService.getMetaWeatherByLocation(location)
+      .subscribe((data) => {
+          this.onGetWeather.emit(data);
+        }
+      )
+  }
 }
