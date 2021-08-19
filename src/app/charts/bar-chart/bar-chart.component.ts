@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-bar-chart',
@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BarChartComponent implements OnInit {
 
+  @Input() weatherData;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  getBarClass(value){
+    return `bar-${value}`
+  }
+
+  getTitleClass(value){
+    return `title-${value}`;
+  }
+
 
 }
