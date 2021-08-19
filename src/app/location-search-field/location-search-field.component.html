@@ -2,6 +2,9 @@
     <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">Location</span>
     </div>
-    <input type="text" class="form-control" placeholder="Location" aria-label="Location"
-        aria-describedby="basic-addon1" (keyup.enter)="onEnter($event)">
+    <input type="text" class="form-control" placeholder="Location" aria-label="Location" aria-describedby="basic-addon1"
+        (keyup.enter)="onEnter($event)">
+</div>
+<div class="spinner-border" role="status" *ngIf="isSearching">
+    <span class="sr-only"></span>
 </div>
