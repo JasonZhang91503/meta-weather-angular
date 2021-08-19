@@ -1,0 +1,13 @@
+
+
+<!-- <div class="chart-header d-flex justify-content-around">
+    <div *ngFor="let date of weatherData.date">{{date}}</div>
+</div> -->
+<div class='chart' *ngIf="weatherData">
+    <div *ngFor="let date of weatherData.date;let i = index;" 
+        [ngClass]="getTitleClass(i)">{{date}}</div>
+    <div *ngFor="let weather of weatherData.data"
+        [ngClass]="getBarClass(weather.toFixed(0))">
+        <div class="label">{{weather.toFixed(0)}}</div>
+    </div>
+</div>
