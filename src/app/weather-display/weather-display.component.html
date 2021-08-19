@@ -1,5 +1,5 @@
 <div class=container>
-    <div class="row">
+    <div class="row mb-2">
         <div class="d-flex justify-content-around" *ngIf="weatherData">
             <div class="card col-2"  *ngFor="let weather of weatherData.consolidated_weather | slice:0:weatherData.consolidated_weather.length-1">
                 <div class="card-body">
@@ -8,10 +8,18 @@
                     <p>Max Temp: {{weather.max_temp.toFixed(2)}}</p>
                     <p>Min Temp: {{weather.min_temp.toFixed(2)}}</p>
                     <p>Humidity: {{weather.humidity.toFixed(2)}}</p>
+                    <app-pie-chart [value]="weather.humidity"></app-pie-chart>
                 </div>
             </div>
+            
         </div>
-        
     </div>
-    
+    <div class="row" >
+        <div class="card col-12" *ngIf="weatherData">
+            <div class="card-body">
+                <app-bar-chart [weatherData]="barChartDisplayData"></app-bar-chart>
+            </div>
+        </div>
+       
+    </div>
 </div>
