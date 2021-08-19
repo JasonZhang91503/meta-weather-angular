@@ -8,6 +8,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./location-search-field.component.scss']
 })
 export class LocationSearchFieldComponent implements OnInit {
+  public isSearching: boolean;
 
   @Output() onGetWeather = new EventEmitter<any>();
 
@@ -20,8 +21,10 @@ export class LocationSearchFieldComponent implements OnInit {
   onEnter(event){
     let location = event.target.value;
 
+    this.isSearching = true;
     this.metaWeatherService.getMetaWeatherByLocation(location)
       .subscribe((data) => {
+          this.isSearching = false;
           this.onGetWeather.emit(data);
         }
       )
